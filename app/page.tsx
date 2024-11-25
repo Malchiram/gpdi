@@ -1,3 +1,4 @@
+'use client'
 import Ads from "@/components/Ads";
 import Event from "@/components/Event";
 import SocialGallery from "@/components/SocialGallery";
