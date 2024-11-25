@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": 2,
+      "documentId": "hdpcqau8x70q5xohoerzj43o",
+      "Title_event": "Christmas GPdI Shekinah",
+      "date_event": "2024-12-14T10:00:00.000Z",
+      "title_date": "14 Dec 2014",
+      "createdAt": "2024-11-21T09:17:04.914Z",
+      "updatedAt": "2024-11-21T09:17:04.914Z",
+      "publishedAt": "2024-11-21T09:17:04.925Z"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 1
+    }
+  }
+}
