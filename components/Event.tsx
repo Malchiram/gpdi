@@ -1,30 +1,30 @@
-import Image from "next/image";
-import UpComingEvents from "./UpComingEvents";
-import axios from "axios";
-async function fetchEvents() {
-    try {
-      const res = await axios.get('http://localhost:3000/api/proxy?endpoint=/api/all-event');
+// import Image from "next/image";
+// import UpComingEvents from "./UpComingEvents";
+// import axios from "axios";
+// async function fetchEvents() {
+//     try {
+//       const res = await axios.get('http://localhost:3000/api/proxy?endpoint=/api/all-event');
   
-      // Cek jika respons sukses
-      if (res.status !== 200) throw new Error('Failed to fetch events');
+//       // Cek jika respons sukses
+//       if (res.status !== 200) throw new Error('Failed to fetch events');
       
-      return res.data;
-    } catch (error) {
-      console.error("Error fetching events:", error);
-      throw new Error("Failed to fetch events");
-    }
-  }
+//       return res.data;
+//     } catch (error) {
+//       console.error("Error fetching events:", error);
+//       throw new Error("Failed to fetch events");
+//     }
+//   }
 
 export default async function Event(
 ) {
-    const events = await fetchEvents();
-    const eventsData = events
+    // const events = await fetchEvents();
+    // const eventsData = events
     
   return (
     <section className=" relative   md:flex-wrap md:grid md:grid-cols-2  xl:grid-cols-3  justify-center w-full ">
-         <UpComingEvents countdownDate={new Date(eventsData?.dateEvent)} titleEvent={eventsData?.titleEvent} dateEvent={eventsData?.dateTitle} />
+         {/* <UpComingEvents countdownDate={new Date(eventsData?.dateEvent)} titleEvent={eventsData?.titleEvent} dateEvent={eventsData?.dateTitle} /> */}
       <div className=" relative w-full h-[400px] xl:h-full  ">
-        <Image src={eventsData?.eventImage?.url ?? '/assets/event.jpg'}  alt="event" fill />
+        {/* <Image src={eventsData?.eventImage?.url ?? '/assets/event.jpg'}  alt="event" fill /> */}
       </div>
    
       <div className=" p-4 md:p-10 xl:p-5  text-white  col-span-2 xl:col-span-1  w-full md:h-full">
