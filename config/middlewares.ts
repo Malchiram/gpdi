@@ -2,7 +2,14 @@ export default [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['http://localhost:3000', 'https://gpdi.vercel.app'], // Ganti dengan domain frontend Anda
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], // Metode yang diizinkan
+      headers: ['Content-Type', 'Authorization'], // Header yang diizinkan
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
