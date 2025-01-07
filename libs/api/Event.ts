@@ -1,6 +1,8 @@
 import axios from "axios";
 import useSWR, { KeyedMutator } from "swr";
-
+// const API_URL = '/api/proxy?endpoint=/api/events?category'
+const API_URL_CATEGORY = 'http://localhost:1337/api/events?category'
+const API_URL_EVENT = 'http://localhost:1337/api/events'
 export interface Events {
   id: number
   documentId: string
@@ -42,7 +44,8 @@ const fetcher = async (url: string) => {
 export const useAllGallery = (shouldFetch:boolean): EventResults => {
   
   const { data, isLoading, error, mutate } = useSWR<Events[]>(
-    shouldFetch ? '/api/proxy?endpoint=/api/events' : null,
+    // shouldFetch ? '/api/proxy?endpoint=/api/events' : null,
+    shouldFetch ? API_URL_EVENT : null,
     fetcher,
     {
      
@@ -59,7 +62,7 @@ export const useAllGallery = (shouldFetch:boolean): EventResults => {
 export const useAllGalleryCategory = (shouldFetch:boolean,category?:string): EventResultsCategory => {
   
   const { data, isLoading, error, mutate } = useSWR<Events[]>(
-    shouldFetch ? `/api/proxy?endpoint=/api/events?category=${category}` : null,
+    shouldFetch ? `${API_URL_CATEGORY}=${category}` : null,
 
     fetcher,
     {

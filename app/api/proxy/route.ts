@@ -13,18 +13,20 @@ export async function GET(request:Request) {
   const strapiUrl = `${process.env.NEXT_PUBLIC_API_URL}${endpoint}`;
 
   try {
-    const res = await axios.get(strapiUrl, {
+   const res = await axios.get(strapiUrl, {
       headers: {
-        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`, // Pastikan API_TOKEN di environment
+        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
       },
     });
 
-    // Pastikan status sukses (200 OK)
-    if (res.status !== 200) {
-      return NextResponse.json({ error: 'Failed to fetch events' }, { status: 500 });
-    }
+    const response = NextResponse.json(res.data);
 
-    return NextResponse.json(res.data);
+    // Tambahkan Header CORS
+    response.headers.set('Access-Control-Allow-Origin', '*'); // Ubah * ke domain spesifik jika perlu
+    response.headers.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    return response;
   } catch (error) {
     console.error('Error fetching data from Strapi:', error);
     return NextResponse.json({ error: 'Failed to fetch events' }, { status: 500 });

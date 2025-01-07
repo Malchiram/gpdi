@@ -1,13 +1,13 @@
-"use client";
 import React from "react";
-import MapsComponent from "./MapsComponent";
+// import MapsComponent from "./MapsComponent";
 import Image from "next/image";
-
+// const MapsComponent = dynamic(() => import("./MapsComponent"), { ssr: false });
 import FacebookAnimation from "@/libs/lotties/facebook.json";
 import InstagramAnimation from "@/libs/lotties/instagram.json";
 import WhatsappAnimation from "@/libs/lotties/whatsapp.json";
 import Link from "next/link";
 import Lottie from "lottie-react";
+// import dynamic from "next/dynamic";
 function Address() {
   return (
     <div className="p-5  flex flex-col  xs:border-none border-b-2 ">
@@ -15,7 +15,7 @@ function Address() {
         <p>ADDRESS</p>
       </div>
         <div className="aspect-[16/9] w-full max-w-[60rem] relative border-4 my-3 mx-auto  rounded-md md:p-5 bg-gradient-to-b from-red-500 to-purple-500  ">
-          <MapsComponent />
+          {/* <MapsComponent /> */}
         </div>
         <div className="  w-full   lg:max-w-[60rem] xl:w-full mx-auto    ">
           <div className=" flex xl:h-full  ">
