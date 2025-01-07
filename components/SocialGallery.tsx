@@ -1,5 +1,5 @@
-import React from 'react'
-import Gallery from './Gallery'
+import React from "react";
+import Gallery from "./Gallery";
 // import MapsComponent from "./MapsComponent";
 import Image from "next/image";
 const MapsComponent = dynamic(() => import("./MapsComponent"), { ssr: false });
@@ -7,16 +7,16 @@ import FacebookAnimation from "@/libs/lotties/facebook.json";
 import InstagramAnimation from "@/libs/lotties/instagram.json";
 import WhatsappAnimation from "@/libs/lotties/whatsapp.json";
 import Link from "next/link";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 function SocialGallery() {
   return (
-    <section className='w-full  overflow-visible   xl:grid    md:border-t-2 md:border-t-slate-600  md:grid-cols-2'>
-        <Gallery />
-        <div className="p-5  flex flex-col  xs:border-none border-b-2 ">
-      <div className="text-center mb-3 font-bebas_neue font-semibold text-4xl tracking-widest">
-        <p>ADDRESS</p>
-      </div>
+    <section className="w-full  overflow-visible   xl:grid    md:border-t-2 md:border-t-slate-600  md:grid-cols-2">
+      <Gallery />
+      <div className="p-5  flex flex-col  xs:border-none border-b-2 ">
+        <div className="text-center mb-3 font-bebas_neue font-semibold text-4xl tracking-widest">
+          <p>ADDRESS</p>
+        </div>
         <div className="aspect-[16/9] w-full max-w-[60rem] relative border-4 my-3 mx-auto  rounded-md md:p-5 bg-gradient-to-b from-red-500 to-purple-500  ">
           <MapsComponent />
         </div>
@@ -47,9 +47,9 @@ function SocialGallery() {
               </div>
               <div className="flex flex-col items-end justify-between w-[20%]  md:gap-2   xl:px-1">
                 <Link
-                   href="https://www.instagram.com/gpdi.shekinah/"
-  target="_blank"
-    rel="noopener noreferrer"
+                  href="https://www.instagram.com/gpdi.shekinah/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative  w-[70%] xs:w-[30%]  md:w-[25%] sm:w-[35%] xl:w-[35%]"
                 >
                   <Lottie
@@ -83,9 +83,9 @@ function SocialGallery() {
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </section>
-  )
+  );
 }
 
-export default SocialGallery
+export default SocialGallery;
