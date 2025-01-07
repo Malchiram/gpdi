@@ -30,4 +30,6 @@ export default [
       },
     },
   },
+  "global::uploadmiddleware",
+
 ];

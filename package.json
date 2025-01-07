@@ -17,6 +17,7 @@
     "@strapi/strapi": "5.4.0",
     "@strapi/utils": "^5.4.1",
     "better-sqlite3": "11.3.0",
+    "mysql2": "^3.12.0",
     "pg": "^8.13.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
